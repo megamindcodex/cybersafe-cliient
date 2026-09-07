@@ -35,6 +35,14 @@ const navItems = computed(() => {
 })
 
 const closeMobileSidebar = () => emit('update:visible', false)
+
+// A named handler (instead of two inline statements in the template) so the
+// click attribute is a single expression — immune to editors reformatting
+// it across lines and breaking the template compiler's inline-expression parser.
+const handleMobileNavClick = (navigate) => {
+  navigate()
+  closeMobileSidebar()
+}
 </script>
 
 <template>
@@ -80,10 +88,7 @@ const closeMobileSidebar = () => emit('update:visible', false)
             :href="item.to"
             class="mb-1 block rounded-md px-3 py-2 text-sm font-medium transition-colors"
             :class="isActive ? 'bg-slate-700 text-white' : 'text-slate-700 hover:bg-slate-100'"
-            @click.prevent="
-              navigate()
-              closeMobileSidebar()
-            "
+            @click.prevent="handleMobileNavClick(navigate)"
           >
             {{ item.label }}
           </a>
