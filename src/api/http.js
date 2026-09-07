@@ -3,7 +3,7 @@ import axios from 'axios'
 export const AUTH_TOKEN_STORAGE_KEY = 'esut_cybersafe_token'
 
 const http = axios.create({
-  baseURL: import.meta.env.VITE_API_URL,
+  baseURL: `${import.meta.env.VITE_API_URL}/api`,
 })
 
 http.interceptors.request.use((config) => {
