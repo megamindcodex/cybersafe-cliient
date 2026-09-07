@@ -46,7 +46,7 @@ const handleMobileNavClick = (navigate) => {
 </script>
 
 <template>
-  <div>
+  <div class="flex h-full">
     <nav class="hidden w-64 shrink-0 flex-col bg-slate-900 text-slate-100 md:flex">
       <div class="px-6 py-5 text-lg font-semibold tracking-tight">ESUT CyberSafe</div>
       <RouterLink
