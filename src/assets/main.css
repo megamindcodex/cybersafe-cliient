@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+:root {
+  /* This app ships one light design regardless of the visitor's OS/browser
+     preference — PrimeVue's Aura theme uses CSS light-dark() for its tokens,
+     which this forces to always take the light branch. */
+  color-scheme: light only;
+}
+
+body {
+  margin: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+  background-color: #f4f6f8;
+  color: #1a2333;
+}
